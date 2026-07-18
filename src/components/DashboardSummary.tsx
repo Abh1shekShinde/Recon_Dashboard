@@ -26,7 +26,7 @@ export default function DashboardSummary({
         // setErrorMessage(
         //   data.error || "Something went wrong generating the summary.",
         // );
-        setErrorMessage("Something went wrong generating the summary.");
+        setErrorMessage("Something went wrong while generating the summary.");
         return;
       }
 
