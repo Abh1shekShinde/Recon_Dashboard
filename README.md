@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReconIq - A Reconciliation Dashboard
 
-## Getting Started
+A web application that ingests an order system export and a payment processor export, reconciles them, and presents the result as a dashboard — with an AI layer on top that explains individual or aggregate discrepancies in plain language.
 
-First, run the development server:
+**Live app:** https://recon-dashboard-xi.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Repo:** https://github.com/Abh1shekShinde/Recon_Dashboard
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Login:** sign up with any email/password directly on the live app (_incase of issues with sign up please use Email: ab@gmail.com, Pass: 148635_).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Setup
+**Prerequisites :** 
+  1. Node.js 18+
+  2. Yarn
+  3. Free Supabase account
+  4. Groq (_any other LLM_) API key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Steps:**
+>git clone https://github.com/Abh1shekShinde/Recon_Dashboard
 
-## Learn More
+>cd recon-dashboard
 
-To learn more about Next.js, take a look at the following resources:
+>yarn install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy .env.example to .env.local and fill in your own values:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+NEXT_PUBLIC_SUPABASE_URL=your api-key
 
-## Deploy on Vercel
+NEXT_PUBLIC_SUPABASE_ANON_KEY= your api-key
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+SUPABASE_SERVICE_ROLE_KEY=your api-key
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GROQ_API_KEY=your api-key
+
+**Run the dev server **
+> yarn dev
+
+Visit http://localhost:3000, sign up, and upload orders.csv / payments.csv
