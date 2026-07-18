@@ -7,9 +7,11 @@ export default async function LoginPage(props: Readonly<LoginPageProps>) {
   const { error } = await props.searchParams;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-600">
+    <div className="flex min-h-screen items-center justify-center bg-gray-300">
       <form className="w-full max-w-sm space-y-4 rounded-lg border bg-white p-8 shadow-sm">
-        <h1 className="text-xl font-semibold text-black">Reconc Dashboard</h1>
+        <span className="text-lg font-bold tracking-tight text-black">
+          Recon<span className="text-emerald-400">IQ</span>
+        </span>
 
         {error && (
           <p className="rounded bg-red-50 p-2 text-sm text-red-600">{error}</p>
