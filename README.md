@@ -1,4 +1,4 @@
-# ReconIq - A Reconciliation Dashboard
+# Recon IQ - A Reconciliation Dashboard
 
 A web application that ingests an order system export and a payment processor export, reconciles them, and presents the result as a dashboard — with an AI layer on top that explains individual or aggregate discrepancies in plain language.
 
