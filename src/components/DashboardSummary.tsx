@@ -41,9 +41,7 @@ export default function DashboardSummary({
   return (
     <div className="rounded-lg border bg-white p-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-gray-700">
-          Overall AI summary
-        </h2>
+        <h2 className="text-sm font-semibold text-gray-700">At a Glance</h2>
         {summary && (
           <button
             onClick={handleGenerate}
@@ -63,9 +61,7 @@ export default function DashboardSummary({
 
       {!summary ? (
         <AIButton onClick={handleGenerate} disabled={status === "loading"}>
-          {status === "loading"
-            ? "Generating summary…"
-            : "Generate overall summary"}
+          {status === "loading" ? "Generating summary…" : "Generate summary"}
         </AIButton>
       ) : (
         <div className="mt-3 space-y-3 text-sm">
