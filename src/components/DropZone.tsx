@@ -58,10 +58,10 @@ export default function DropZone({
       }}
       onDragLeave={() => setIsDragging(false)}
       onDrop={handleDrop}
-      className={`flex min-h-33 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-lg border-2 border-dashed p-6 text-center transition-colors ${
+      className={`flex min-h-33 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-lg border-2 border-dashed p-6 text-center transition-colors border-gray-500 ${
         isDragging
           ? "border-gray-900 bg-gray-50"
-          : "border-gray-300 hover:border-gray-500"
+          : "border-gray-300  hover:border-black"
       }`}
     >
       <p className="text-sm font-medium text-gray-900">{label}</p>
