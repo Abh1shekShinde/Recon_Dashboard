@@ -19,10 +19,10 @@ import {
   createColumnHelper,
   SortingState,
 } from "@tanstack/react-table";
-import Link from "next/link";
 import Card from "./Card";
 import { Discrepancy, Order, Summary, TYPE_LABELS } from "@/app/common/types";
 import DashboardSummary from "./DashboardSummary";
+import ExplainLink from "./ExplainRowLink";
 
 type DashBoardProps = {
   orders: Order[];
@@ -107,14 +107,7 @@ export default function Dashboard(props: Readonly<DashBoardProps>) {
       columnHelper.display({
         id: "actions",
         header: "",
-        cell: (info) => (
-          <Link
-            href={`/dashboard/discrepancy/${info.row.original.id}`}
-            className="text-sm underline"
-          >
-            Explain →
-          </Link>
-        ),
+        cell: (info) => <ExplainLink discrepancyId={info.row.original.id} />,
       }),
     ],
     [columnHelper],
