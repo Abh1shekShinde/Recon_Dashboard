@@ -46,6 +46,11 @@ Everything lives in a single Next.js application, deployed as one unit to Vercel
 
 <img width="697" height="503" alt="architecture" src="https://github.com/user-attachments/assets/57b026f6-097b-41ac-abe3-bdf94500bf4b" />
 
+  - **The browser (frontend)**: what the user actually sees and clicks: login page, dashboard, upload form. (nextjs)
+  - **API routes (the backend)**: a handful of server-only files (like /api/ingest, /api/discrepancy/[id]/explain) that do the real work: reading uploaded files, talking to the database, calling the AI.
+  - **Supabase (the database + login system)**: one external service doing two jobs: it's the Postgres database storing orders, payments, and discrepancies, and it's also who handles signup/login/passwords, so I didn't have to build authentication from scratch.
+  - **Groq (the AI)**: It looks at a discrepancy that's already been figured out and writes a plain-English explanation of it.(called only when requested).
+
 ## Reconciliation Logic
 1. **Normalize:** Parse both files' dates to UTC (orders.csv uses YYYY-MM-DD HH:MM:SS; payments.csv uses DD/MM/YYYY HH:MM these are different formats and are parsed accordingly, not assumed to be the same). Coerce missing numeric fields to null rather than 0, so a truly missing value isn't treated as zero everywhere.
 2. **De-duplicate:** orders.csv contains one exact duplicate order row (ORD-1004). Duplicate order_id rows are collapsed to the first occurrence before matching, so a duplicate CSV row cannot manufacture a fake discrepancy.
