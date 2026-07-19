@@ -132,8 +132,11 @@ export default function Dashboard(props: Readonly<DashBoardProps>) {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Summary</h1>
-        <a href="/dashboard/reupload" className="text-sm underline">
+        <h1 className="text-2xl font-bold">Reconciliation summary</h1>
+        <a
+          href="/dashboard/reupload"
+          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-slate-800"
+        >
           Re-upload data
         </a>
       </div>

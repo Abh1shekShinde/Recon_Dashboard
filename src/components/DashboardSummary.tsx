@@ -67,15 +67,13 @@ export default function DashboardSummary({
         <div className="mt-3 space-y-3 text-sm">
           <p>{summary.summary}</p>
           <div>
-            <p className="text-xs font-medium text-gray-500">
+            <p className="text-sm font-bold text-red-600">
               Likely systemic cause
             </p>
             <p className="mt-0.5">{summary.likely_cause}</p>
           </div>
           <div>
-            <p className="text-xs font-medium text-gray-500">
-              What to do first
-            </p>
+            <p className="text-sm font-bold text-green-600">What to do first</p>
             <p className="mt-0.5">{summary.recommended_action}</p>
           </div>
         </div>
